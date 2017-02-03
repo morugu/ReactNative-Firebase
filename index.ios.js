@@ -15,24 +15,20 @@ import {
   View,
   TouchableHighlight,
   AlertIOS,
-  ActivityIndicator,
-  Animated
+  ActivityIndicator
 } from 'react-native';
-import Animation from 'lottie-react-native';
 const StatusBar = require('./components/StatusBar');
 const ActionButton = require('./components/ActionButton');
 const ListItem = require('./components/ListItem');
 const styles = require('./styles.js');
 
 
-// Initialize Firebase
 const firebaseConfig = {
   apiKey: "<your-api-key>",
   authDomain: "<your-auth-domain>",
   databaseURL: "<your-database-url>",
   storageBucket: "<your-storage-bucket>",,
 };
-
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 export default class RNDemo extends Component {
@@ -133,30 +129,8 @@ export default class RNDemo extends Component {
   }
 
   componentDidMount() {
-      this.listenForItems(this.itemsRef);
+    this.listenForItems(this.itemsRef);
   }
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: 'black',
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     margin: 10,
-//     color: 'white'
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: 'white',
-//     marginBottom: 5,
-//   },
-// });
-
-
 
 AppRegistry.registerComponent('RNDemo', () => RNDemo);
